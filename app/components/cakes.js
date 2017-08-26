@@ -35,6 +35,22 @@ var Cakes = React.createClass({
     render: function() {
         return (
             <div>
+
+                <p className="row">
+                    {/* <div className="col-md-3 button-styling">
+                        <Link to="/links"><button className="btn btn-primary btn-lg">Page Links</button></Link>
+                    </div> */}
+                    {/* <div className="col-md-3 button-styling">
+                        <Link to="/gallery"><button className="btn btn-warning btn-lg">Gallery</button></Link>
+                    </div> */}
+                    {/* <div className="col-md-3 button-styling">
+                        <Link to="/aboutMe"><button className="btn btn-danger btn-lg">About Me</button></Link>
+                    </div> */}
+                    <div className="col-md-3 button-styling">
+                        <a href = "/cart2" className="btn btn-warning btn-lg">Get A Quote</a>
+                    </div>
+                </p>
+
                     <div className = "first-div">
                         <div id="thumbnail-slider">
                             <div className="inner">
@@ -77,18 +93,18 @@ var Cakes = React.createClass({
                
 
                 <p className="row">
-                    <div className="col-md-3 button-styling">
+                    {/* <div className="col-md-3 button-styling">
                         <Link to="/links"><button className="btn btn-primary btn-lg">Page Links</button></Link>
-                    </div>
+                    </div> */}
                     <div className="col-md-3 button-styling">
-                        <Link to="/gallery"><button className="btn btn-danger btn-lg">Gallery</button></Link>
+                        <Link to="/gallery"><button className="btn btn-warning btn-lg">Gallery</button></Link>
                     </div>
-                    <div className="col-md-3 button-styling">
+                    {/* <div className="col-md-3 button-styling">
                         <Link to="/aboutMe"><button className="btn btn-danger btn-lg">About Me</button></Link>
-                    </div>
-                    <div className="col-md-3 button-styling">
-                        <a href = "/cart2" className="btn btn-danger btn-lg">Order Now</a>
-                    </div>
+                    </div> */}
+                    {/* <div className="col-md-3 button-styling">
+                        <a href = "/cart2" className="btn btn-warning btn-lg">Get A Quote</a>
+                    </div> */}
                 </p>
 
                 <div className="row">

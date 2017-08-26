@@ -4,7 +4,8 @@
 }
 
 body{
-  background:pink
+    background-image: url(/images/bkgrd.png);
+  /* background:pink */
 }
 
 .thumbnail .description {

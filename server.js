@@ -19,7 +19,8 @@ const PORT = process.env.PORT || 3000;
 // ====================================================================================================
 mongoose.Promise = Promise;
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/shopping');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://test:Welcome01@ds161493.mlab.com:61493/heroku_wkh1n2mn');
+// mongodb://localhost/shopping
 const db = mongoose.connection;
 require('./config/passport');
 

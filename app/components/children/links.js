@@ -7,7 +7,7 @@ var links = React.createClass({
   render: function() {
     return (
         <div>
-            <h1>This is the links page </h1>
+            <h1> </h1>
         </div>
     );
   }
