@@ -24,6 +24,77 @@ router.get('/store-front', function(req, res, next) {
     });
 });
 
+// ====================================================================================================
+// Serving Size options
+// ====================================================================================================
+router.get('/cart2', function(req, res, next) {
+    var successMsg = req.flash('success')[0];
+    Product.find({ category: 'size' },function(err, docs) {
+        var productChunks = [];
+        var chunkSize = 3;
+        for (var i = 0; i < docs.length; i += chunkSize) {
+            productChunks.push(docs.slice(i, i + chunkSize));
+        }
+        res.render('shop/cart2', { title: 'Shopping Cart', products: productChunks, successMsg: successMsg, noMessages: !successMsg });
+    });
+});
+// ====================================================================================================
+// shape options
+// ====================================================================================================
+router.get('/cart3', function(req, res, next) {
+    var successMsg = req.flash('success')[0];
+    Product.find({ category: 'shape' },function(err, docs) {
+        var productChunks = [];
+        var chunkSize = 3;
+        for (var i = 0; i < docs.length; i += chunkSize) {
+            productChunks.push(docs.slice(i, i + chunkSize));
+        }
+        res.render('shop/cart3', { title: 'Shopping Cart', products: productChunks, successMsg: successMsg, noMessages: !successMsg });
+    });
+});
+// ====================================================================================================
+// topping options
+// ====================================================================================================
+router.get('/cart4', function(req, res, next) {
+    var successMsg = req.flash('success')[0];
+    Product.find({ category: 'topping' },function(err, docs) {
+        var productChunks = [];
+        var chunkSize = 3;
+        for (var i = 0; i < docs.length; i += chunkSize) {
+            productChunks.push(docs.slice(i, i + chunkSize));
+        }
+        res.render('shop/cart4', { title: 'Shopping Cart', products: productChunks, successMsg: successMsg, noMessages: !successMsg });
+    });
+});
+// ====================================================================================================
+// filling options
+// ====================================================================================================
+router.get('/cart5', function(req, res, next) {
+    var successMsg = req.flash('success')[0];
+    Product.find({ category: 'filling' },function(err, docs) {
+        var productChunks = [];
+        var chunkSize = 3;
+        for (var i = 0; i < docs.length; i += chunkSize) {
+            productChunks.push(docs.slice(i, i + chunkSize));
+        }
+        res.render('shop/cart5', { title: 'Shopping Cart', products: productChunks, successMsg: successMsg, noMessages: !successMsg });
+    });
+});
+// ====================================================================================================
+// flavor options
+// ====================================================================================================
+router.get('/cart6', function(req, res, next) {
+    var successMsg = req.flash('success')[0];
+    Product.find({ category: 'flavor' },function(err, docs) {
+        var productChunks = [];
+        var chunkSize = 3;
+        for (var i = 0; i < docs.length; i += chunkSize) {
+            productChunks.push(docs.slice(i, i + chunkSize));
+        }
+        res.render('shop/cart6', { title: 'Shopping Cart', products: productChunks, successMsg: successMsg, noMessages: !successMsg });
+    });
+});
+
 router.get('/modal', function(req, res, next) {
     res.render('shop/modal');
 });
@@ -42,6 +113,91 @@ router.get('/add-to-cart/:id', function(req, res, next) {
         cart.add(product, product.id);
         req.session.cart = cart;
         res.redirect('/store-front');
+    });
+});
+
+// ====================================================================================================
+// Routing for adding itmes to shopping cart.
+// ====================================================================================================
+router.get('/cart2/:id', function(req, res, next) {
+    var productId = req.params.id;
+    var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    Product.findById(productId, function(err, product) {
+        if (err) {
+            return res.redirect('/');
+        }
+        cart.add(product, product.id);
+        req.session.cart = cart;
+        res.redirect('/cart3');
+    });
+});
+
+// ====================================================================================================
+// Routing for adding itmes to shopping cart.
+// ====================================================================================================
+router.get('/cart3/:id', function(req, res, next) {
+    var productId = req.params.id;
+    var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    Product.findById(productId, function(err, product) {
+        if (err) {
+            return res.redirect('/');
+        }
+        cart.add(product, product.id);
+        req.session.cart = cart;
+        res.redirect('/cart4');
+    });
+});
+
+// ====================================================================================================
+// Routing for adding itmes to shopping cart.
+// ====================================================================================================
+router.get('/cart4/:id', function(req, res, next) {
+    var productId = req.params.id;
+    var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    Product.findById(productId, function(err, product) {
+        if (err) {
+            return res.redirect('/');
+        }
+        cart.add(product, product.id);
+        req.session.cart = cart;
+        res.redirect('/cart5');
+    });
+});
+
+// ====================================================================================================
+// Routing for adding itmes to shopping cart.
+// ====================================================================================================
+router.get('/cart5/:id', function(req, res, next) {
+    var productId = req.params.id;
+    var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    Product.findById(productId, function(err, product) {
+        if (err) {
+            return res.redirect('/');
+        }
+        cart.add(product, product.id);
+        req.session.cart = cart;
+        res.redirect('/cart6');
+    });
+});
+
+// ====================================================================================================
+// Routing for adding itmes to shopping cart.
+// ====================================================================================================
+router.get('/cart6/:id', function(req, res, next) {
+    var productId = req.params.id;
+    var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+    Product.findById(productId, function(err, product) {
+        if (err) {
+            return res.redirect('/');
+        }
+        cart.add(product, product.id);
+        req.session.cart = cart;
+        res.redirect('/shopping-cart');
     });
 });
 

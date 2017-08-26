@@ -87,7 +87,7 @@ var Cakes = React.createClass({
                         <Link to="/aboutMe"><button className="btn btn-danger btn-lg">About Me</button></Link>
                     </div>
                     <div className="col-md-3 button-styling">
-                        <a href = "/modal" className="btn btn-danger btn-lg">Order Now</a>
+                        <a href = "/cart2" className="btn btn-danger btn-lg">Order Now</a>
                     </div>
                 </p>
 
