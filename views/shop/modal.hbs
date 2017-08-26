@@ -1,0 +1,222 @@
+
+{{!-- <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head> --}}
+
+<div class="container">
+    <h1>Taste-E-Licious</h1>
+    <p class="text-muted">
+        To place your order or get a quote, click the Order Here button.
+
+    </p>
+    <hr />
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#demo-0">Order Here!</button>
+    <!--button type="button" class="btn btn-info"    data-toggle="modal" data-target="#demo-2">Launch Modal #2</button>
+  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#demo-3">Launch Modal #3</button-->
+
+
+     <!-- [ Modal #0 ] -->
+    <div class="modal fade" id="demo-0" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><i class="icon-xs-o-md"></i></button>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title caps"><strong>Cake for how many guests?</strong></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="number" id="guests" class="form-control" min="1" max="1000" name="guests" placeholder="" required/>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" id="next" data-toggle="modal" data-target="#demo-1" data-dismiss="modal">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- [ Modal #1 ] -->
+    <div class="modal fade" id="demo-1" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><i class="icon-xs-o-md"></i></button>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title caps"><strong>Select your cake's shape!</strong></h4>
+                </div>
+                <div class="modal-body">
+                    <input type="image" id="round" src="images/round_cake.jpg" style="height:150px;width:150px;" data-toggle="modal" data-target="#demo-2" data-dismiss="modal" name="shape"></input>
+                    <input type="image" id="square" src="images/square_cake.jpg" style="height:150px;width:150px;" data-toggle="modal" data-target="#demo-2" data-dismiss="modal" name="shape"></input>
+                    <input type="image" id="custom" src="images/custom_cake.png" style="height:175px;width:175px;" data-toggle="modal" data-target="#demo-2" data-dismiss="modal" name="shape"></input>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#demo-0" data-dismiss="modal">Go Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- [ Modal #2 ] -->
+    <div class="modal fade" id="demo-2" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><i class="icon-xs-o-md"></i></button>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title caps"><strong>Choose a cake flavor</strong></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="image" id="vanilla_flavor" src="images/vanilla.jpeg" style="height:150px;width:150px;" data-toggle="modal" data-target="#demo-3" data-dismiss="modal" name="flavor"></input>
+                        <input type="image" id="chocolate_flavor" src="images/chocolate_cake.jpg" style="height:150px;width:175px;" data-toggle="modal" data-target="#demo-3" data-dismiss="modal" name="flavor"></input>
+                        <input type="image" id="strawberry_flavor" src="images/strawberry-sheet-cake-recipe.jpg" style="height:150px;width:150px;" data-toggle="modal" data-target="#demo-3" data-dismiss="modal" name="flavor"></input>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#demo-1" data-dismiss="modal">Go Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- [ Modal #3 ] -->
+    <div class="modal fade" id="demo-3" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><i class="icon-xs-o-md"></i></button>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title caps"><strong>Cake Size</strong></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <button type="button" id="6" class="btn btn-danger btn-lg btn-block" data-toggle="modal" data-target="#demo-4" data-dismiss="modal" name="size">6"</button>
+                        <button type="button" id="8" class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#demo-4" data-dismiss="modal" name="size">8"</button>
+                        <button type="button" id="10" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#demo-4" data-dismiss="modal" name="size">10"</button>
+                        <button type="button" id="12" class="btn btn-primary btn-lg btn-block btn-success" data-toggle="modal" data-target="#demo-4" data-dismiss="modal" name="size">12"</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#demo-2" data-dismiss="modal">Go Back</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- [ Modal #4 ] -->
+    <div class="modal fade" id="demo-4" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><i class="icon-xs-o-md"></i></button>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title caps"><strong>Choose an Icing!</strong></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="image" id="buttercream_icing" src="images/buttercream.jpg" style="height:150px;width:150px;" data-toggle="modal" data-target="#demo-5" data-dismiss="modal" name="topping"></input>
+                        <input type="image" id="fondant" src="images/fondant.jpg" style="height:150px;width:150px;" data-toggle="modal" data-target="#demo-5" data-dismiss="modal" name="topping"></input>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#demo-3" data-dismiss="modal">Go Back</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [ Modal #5 ] -->
+    <div class="modal fade" id="demo-5" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><i class="icon-xs-o-md"></i></button>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title caps"><strong>Choose a Filling!</strong></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="image" id="butter_filling" src="images/buttercream_filling.jpg" style="height:150px;width:150px;" data-toggle="modal" data-target="#demo-6" data-dismiss="modal" name="filling"></input>
+                        <input type="image" id="strawberry_filling" src="images/strawberry_filling.jpg" style="height:150px;width:150px;" data-toggle="modal" data-target="#demo-6" data-dismiss="modal" name="filling"></input>
+                        <input type="image" id="peach_filling" src="images/peach_filling.jpg" style="height:150px;width:150px;" data-toggle="modal" data-target="#demo-6" data-dismiss="modal" name="filling"></input>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#demo-4" data-dismiss="modal">Go Back</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- [ Modal #6 ] -->
+    <div class="modal fade" id="demo-6" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><i class="icon-xs-o-md"></i></button>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title caps"><strong>Special Instructions</strong></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="input-group col-md-12">
+                            <input type="text" id="instructions" class="form-control" placeholder="Special Instructions..." />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#demo-5" data-dismiss="modal">Go Back</button>
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#demo-0" data-dismiss="modal">Start Over</button>
+                    <a href="#" id="modalSubmit" type="button" class="btn btn-success">Submit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- [ Modal #7 ] -->
+    <div class="modal fade" id="demo-7" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal"><i class="icon-xs-o-md"></i></button>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title caps"><strong>Cake Total</strong></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="input-group col-md-12">
+                            <h1>$200</h1>
+                            {{!-- <input type="text" class="form-control" placeholder="Special Instructions..." /> --}}
+                            {{!-- <span class="input-group-btn"><button class="btn btn-default" type="button">Action</button></span> --}}
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#demo-5" data-dismiss="modal">Go Back</button>
+                    <a href="/checkout" type="button" class="btn btn-success">Checkout</a>
+                    {{!-- <a href="/checkout" type="button" class="btn btn-primary" data-toggle="modal" data-target="/checkout" data-dismiss="modal">Check Out</a> --}}
+                </div>
+            </div>
+        </div>
+    </div>    
+
+</div>
+<!-- end .container -->
+
+<script type="text/javascript" src="javascript/quote.js"></script>
